@@ -39,20 +39,15 @@ int main(int argc,char **argv)
 	int read;
 	
 	servo* servos= new servo[12];
+	int* pins = { 21,20,16,12,7,8,25,24,23,18,15,14 };
+	for (int i = 0; i < 12; i++) {
+		servos[i] = new servo(pins[i], 5, 20);
+	}
 	while(1){		
-		printf("papsdapd");
-		for(int i = 0; i < 90;i++){		
-		servo1->setServoPosition(i);
-		servo2->setServoPosition(i);
-		servo3->setServoPosition(i);
-		//usleep(100000);
+		
 	}
-	for(int i = 90; i >0;i--){
-		servo1->setServoPosition(i);
-		servo2->setServoPosition(i);
-		servo3->setServoPosition(i);
-		//usleep(100000);
-	}
+	for (int i = 0; i < 12; i++) {
+		free(servos[i]);
 	}
 	return 0;
 }
