@@ -71,15 +71,15 @@ float  accGyrRead::getZAcc()
 	return readWord(MPU6050_ACC_ZOUT_H)/16384.0;
 }
 int accGyrRead::gyroCalibration(){
-	for(int i = 0; i < 200;i++){
+	for(int i = 0; i < 2000;i++){
 		zeroGyrX+=readWord(MPU6050_GYRO_XOUT_H);
 		zeroGyrY+=readWord(MPU6050_GYRO_YOUT_H);
 		zeroGyrZ+=readWord(MPU6050_GYRO_ZOUT_H);
 		usleep(100);
 	}
-	zeroGyrX/=200;
-	zeroGyrY/=200;
-	zeroGyrZ/=200;
+	zeroGyrX/=2000;
+	zeroGyrY/=2000;
+	zeroGyrZ/=2000;
 return 1;
 }
 
