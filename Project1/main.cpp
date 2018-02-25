@@ -37,10 +37,8 @@ int main(int argc,char **argv)
 		return -1;
 		};
 	int read;
-	servo* servo1 = new servo(21,5,20);
-	servo* servo2 = new servo(20,5,20);
-	servo* servo3 = new servo(12,5,20);
 	
+	servo* servos= new servo[12];
 	while(1){		
 		printf("papsdapd");
 		for(int i = 0; i < 90;i++){		
